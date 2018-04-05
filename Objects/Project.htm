@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Thu Apr 05 09:54:52 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Thu Apr 05 12:08:41 2018
 <BR><P>
 <H3>Maximum Stack Usage =        176 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -682,7 +682,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> prog_capteurcan.o(.constdata)
 </UL>
-<P><STRONG><a name="[45]"></a>CANthreadT</STRONG> (Thumb, 116 bytes, Stack size 40 bytes, prog_capteurcan.o(i.CANthreadT))
+<P><STRONG><a name="[45]"></a>CANthreadT</STRONG> (Thumb, 100 bytes, Stack size 40 bytes, prog_capteurcan.o(i.CANthreadT))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176 + Unknown Stack Size
 <LI>Call Chain = CANthreadT &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -941,11 +941,12 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Control
 </UL>
 
-<P><STRONG><a name="[46]"></a>Recupcapt</STRONG> (Thumb, 138 bytes, Stack size 32 bytes, prog_capteurcan.o(i.Recupcapt))
+<P><STRONG><a name="[46]"></a>Recupcapt</STRONG> (Thumb, 156 bytes, Stack size 32 bytes, prog_capteurcan.o(i.Recupcapt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
 <LI>Call Chain = Recupcapt &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalSet
+<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_On
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Off
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GLCD_DrawString
@@ -1107,6 +1108,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;isrSignalSet
 </UL>
 <BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;myCAN2_callback
+<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Recupcapt
 <LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CANthreadR
 </UL>
 

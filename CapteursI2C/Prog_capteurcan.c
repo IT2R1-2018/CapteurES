@@ -91,13 +91,13 @@ osThreadDef(Recupcapt,osPriorityNormal,1,512);
 		julien =0x00;
 		LED_Off(4);
 		osSignalWait(0x001,osWaitForever);
-		if (presence1 == 1 ) julien |= (1<<3);
-		else julien |= (0<<3);
-		if (presence2 == 1 )  julien |= (1<<7);
-		else julien |= (0<<7);
+		if (presence1 == 1 ) julien |= (1<<0);
+		else julien |= (0<<0);
+		//if (presence2 == 1 )  julien |= (1<<7);
+		//else julien |= (0<<7);
     envoi_buf[0] = julien;
 		Driver_CAN2.MessageSend(1,&tx_msg_info,envoi_buf,1);
-		sprintf(texts,"%04X",envoi_buf[0]);
+		sprintf(texts,"%01X",envoi_buf[0]);
 		GLCD_DrawString(10,100,texts);
 		LED_On(4);
 			}
@@ -166,7 +166,6 @@ void InitCan2 (void)
 	{
 	Driver_CAN2.Initialize(NULL,myCAN2_callback);
 	Driver_CAN2.PowerControl(ARM_POWER_FULL);
-	
 	Driver_CAN2.SetMode(ARM_CAN_MODE_INITIALIZATION);
 	Driver_CAN2.SetBitrate( ARM_CAN_BITRATE_NOMINAL,
 													125000,
@@ -197,6 +196,7 @@ void Recupcapt (void const *argument)
 		else presence1 = 0;
 		if (presence2 <= 15) presence2 = 1;
 		else presence2 = 0;
+		if (presence1 == 1) osSignalSet(id_CANthreadT,0x001);
 		sprintf(tab3,"Valeur : %02d%02d", presence1,presence2);
 	  GLCD_DrawString(10,10,tab3);
 		write1byte0(0x70,0x00,0x51);
