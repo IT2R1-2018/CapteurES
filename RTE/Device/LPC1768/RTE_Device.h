@@ -110,7 +110,7 @@
 
 // <e> ENET (Ethernet Interface) [Driver_ETH_MAC0]
 // <i> Configuration settings for Driver_ETH_MAC0 in component ::Drivers:Ethernet MAC
-#define RTE_ENET                        1
+#define RTE_ENET                        0
 
 
 //   <h> RMII (Reduced Media Independent Interface)
@@ -224,7 +224,7 @@
 
 // <e> I2C0 (Inter-integrated Circuit Interface 0) [Driver_I2C0]
 // <i> Configuration settings for Driver_I2C0 in component ::Drivers:I2C
-#define RTE_I2C0                        0
+#define RTE_I2C0                        1
 
 //   <o> I2C0_SCL Pin <0=>P0_28
 #define RTE_I2C0_SCL_PORT_ID            0
@@ -666,7 +666,7 @@
 //   <h> Pin Configuration
 //     <o> CAN1_RD <0=>Not used <1=>P0_0 <2=>P0_21
 //     <i> CAN1 receiver input.
-#define   RTE_CAN1_RD_ID                0
+#define   RTE_CAN1_RD_ID                1
 #if      (RTE_CAN1_RD_ID == 0)
   #define RTE_CAN1_RD_PIN_EN            0
 #elif    (RTE_CAN1_RD_ID == 1)
@@ -685,7 +685,7 @@
 #endif
 //     <o> CAN1_TD <0=>Not used <1=>P0_1 <2=>P0_22
 //     <i> CAN1 transmitter output.
-#define   RTE_CAN1_TD_ID                0
+#define   RTE_CAN1_TD_ID                1
 #if      (RTE_CAN1_TD_ID == 0)
   #define RTE_CAN1_TD_PIN_EN            0
 #elif    (RTE_CAN1_TD_ID == 1)
@@ -707,12 +707,12 @@
 
 // <e> CAN2 Controller [Driver_CAN2]
 // <i> Configuration settings for Driver_CAN2 in component ::Drivers:CAN
-#define   RTE_CAN_CAN2                  0
+#define   RTE_CAN_CAN2                  1
 
 //   <h> Pin Configuration
 //     <o> CAN2_RD <0=>Not used <1=>P0_4 <2=>P2_7
 //     <i> CAN2 receiver input.
-#define   RTE_CAN2_RD_ID                0
+#define   RTE_CAN2_RD_ID                1
 #if      (RTE_CAN2_RD_ID == 0)
   #define RTE_CAN2_RD_PIN_EN            0
 #elif    (RTE_CAN2_RD_ID == 1)
@@ -731,7 +731,7 @@
 #endif
 //     <o> CAN2_TD <0=>Not used <1=>P0_5 <2=>P2_8
 //     <i> CAN2 transmitter output.
-#define   RTE_CAN2_TD_ID                0
+#define   RTE_CAN2_TD_ID                1
 #if      (RTE_CAN2_TD_ID == 0)
   #define RTE_CAN2_TD_PIN_EN            0
 #elif    (RTE_CAN2_TD_ID == 1)
@@ -933,7 +933,7 @@
 
 // <e> SPI (Serial Peripheral Interface) [Driver_SPI2]
 // <i> Configuration settings for Driver_SPI2 in component ::Drivers:SPI
-#define   RTE_SPI                       1
+#define   RTE_SPI                       0
 
 //   <h> Pin Configuration
 //     <o> SPI_SSEL <0=>Not used <1=>P0_16
